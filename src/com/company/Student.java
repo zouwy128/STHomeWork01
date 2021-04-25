@@ -1,31 +1,29 @@
 package com.company;
 
 public class Student {
-    //学号
-    private int ID;
     //姓名
     private String name;
+    //学号
+    private int ID;
     //出生日期
     private String birDate;
     //性别
     private boolean gender;
 
     //构造函数
-    public Student() {
-        this.ID = ID;
+
+    public Student(String name, int ID, String birDate, boolean gender) {
         this.name = name;
+        this.ID = ID;
         this.birDate = birDate;
         this.gender = gender;
     }
 
-    //getter and setter
-    public int getID() {
-        return ID;
+    public Student() {
+
     }
 
-    public void setID(int ID) {
-        this.ID = ID;
-    }
+    //getter and setter
 
     public String getName() {
         return name;
@@ -33,6 +31,14 @@ public class Student {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public int getID() {
+        return ID;
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
     }
 
     public String getBirDate() {

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class StudentManager {
-    public static void main(String[] args){
+    public static void APP(){
         Scanner sc = new Scanner(System.in);
         ArrayList<Student> arr = new ArrayList<>();
         while (true){
@@ -99,8 +99,8 @@ public class StudentManager {
                 //遍历加if，删除对应的学生
                 if (s.getName().equals(name)) {
                     index = false;
-                    System.out.println("学号" + "\t" + "姓名" + "\t" + "出生日期" + "\t" + "性别");
-                    System.out.println(s.getID() + "\t" + s.getName() + "\t" + s.getBirDate() + "\t"+ s.isGender());
+                    System.out.println("姓名" + "\t" +"学号" + "\t" +  "出生日期" + "\t" + "性别");
+                    System.out.println(s.getName() + "\t" + s.getID() + "\t" + s.getBirDate() + "\t"+ s.isGender());
                     return;
                 }
             }
@@ -149,7 +149,7 @@ public class StudentManager {
                 }
             }
             if (index) {
-                System.out.println("学号输入错误");
+                System.out.println("姓名输入错误");
             }
         }
     }
@@ -161,10 +161,10 @@ public class StudentManager {
             return;
         }
         //使用制表符制作表格，更好的展示
-        System.out.println("学号" + "\t" + "姓名" + "\t" + "出生日期" + "\t" + "性别");
+        System.out.println("姓名" + "\t" +"学号" + "\t" +  "出生日期" + "\t" + "性别");
         //可以使用增强for循环，针对只对数组，集合中对象单一遍历操作的函数
         for (Student s : arr) {
-            System.out.println(s.getID() + "\t" + s.getName() + "\t" + s.getBirDate() + "\t"+ s.isGender());
+            System.out.println(s.getName() + "\t" + s.getID() + "\t" + s.getBirDate() + "\t"+ s.isGender());
         }
     }
 }
