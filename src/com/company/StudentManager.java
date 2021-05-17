@@ -1,13 +1,23 @@
 package com.company;
 
+/**
+ * @ClassName StudentManager
+ * @Description TODO
+ * @Author 邹杨燕
+ * @Date 2021/5/17 13:50
+ * @Version 1.0
+ **/
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class StudentManager {
-    public static void APP(){
+    //public static void APP(){
+    public static void APP() { // 14
         Scanner sc = new Scanner(System.in);
         ArrayList<Student> arr = new ArrayList<>();
-        while (true){
+
+        //while (true){
+        while (true) { // 14
             System.out.println("请选择操作：");
             System.out.println("***********************");
             System.out.println("*        1插入        *");
@@ -39,6 +49,8 @@ public class StudentManager {
                     System.out.println("谢谢使用");
                     System.exit(0);
                     break;
+                default: // 37
+                    break;
             }
         }
     }
@@ -66,13 +78,17 @@ public class StudentManager {
             name = sc.nextLine();
             if (isUsed(arr, name)) {
                 System.out.println("姓名输入重复，请重新输入");
-            } else break;
+            } else {
+                break;
+            }
         }
         System.out.println("学号");
         int ID = sc.nextInt();
         sc.nextLine();
+
         System.out.println("出生日期");
         String birDate = sc.nextLine();
+
         System.out.println("性别");
         boolean gender = sc.nextBoolean();
 
@@ -82,6 +98,7 @@ public class StudentManager {
         s.setName(name);
         s.setBirDate(birDate);
         s.setGender(gender);
+
         //把类装到集合中
         arr.add(s);
         System.out.println("插入成功!");
@@ -89,18 +106,20 @@ public class StudentManager {
     //查找学生函数
     private static void searchStudent(ArrayList<Student> arr) {
         Scanner sc = new Scanner(System.in);
-        while (true){
+        //while (true) {
+        while(true) { // 14
             System.out.println("请输入要查找学生的姓名：");
             String name = sc.nextLine();
             //用boolean来判断是否查找成功
             boolean index = true;
             for (int i = 0; i < arr.size(); i++) {
                 Student s = arr.get(i);
-                //遍历加if，删除对应的学生
+                //遍历加if，输出对应的学生
                 if (s.getName().equals(name)) {
                     index = false;
                     System.out.println("姓名" + "\t" +"学号" + "\t" +  "出生日期" + "\t" + "性别");
-                    System.out.println(s.getName() + "\t" + s.getID() + "\t" + s.getBirDate() + "\t"+ s.isGender());
+                    System.out.println(s.getName() + "\t" + s.getID() + "\t" + s.getBirDate()
+                            + "\t"+ s.isGender());
                     return;
                 }
             }
@@ -113,7 +132,8 @@ public class StudentManager {
     //删除学生函数
     private static void deleteStudent(ArrayList<Student> arr) {
         Scanner sc = new Scanner(System.in);
-        while (true){
+        //while(true){
+        while (true) { // 14
             System.out.println("查找要删除的学生的姓名：");
             String name = sc.nextLine();
             boolean index = true;
@@ -135,7 +155,8 @@ public class StudentManager {
     //修改学生函数
     private static void updateStudent(ArrayList<Student> arr) {
         Scanner sc = new Scanner(System.in);
-        while(true){
+        //while(true) {
+        while (true) { // 14
             System.out.println("查找要修改的学生的姓名:");
             String name = sc.nextLine();
             boolean index = true;
@@ -164,8 +185,9 @@ public class StudentManager {
         System.out.println("姓名" + "\t" +"学号" + "\t" +  "出生日期" + "\t" + "性别");
         //可以使用增强for循环，针对只对数组，集合中对象单一遍历操作的函数
         for (Student s : arr) {
-            System.out.println(s.getName() + "\t" + s.getID() + "\t" + s.getBirDate() + "\t"+ s.isGender());
+            System.out.println(s.getName() + "\t" + s.getID() + "\t" + s.getBirDate()
+                    + "\t"+ s.isGender());
         }
     }
-}
+} // StudentManager 6
 

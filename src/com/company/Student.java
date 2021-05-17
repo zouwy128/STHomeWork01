@@ -1,5 +1,12 @@
 package com.company;
 
+/**
+ * @ClassName Student
+ * @Description TODO
+ * @Author 邹杨燕
+ * @Date 2021/5/17 13:50
+ * @Version 1.0
+ **/
 public class Student {
     //姓名
     private String name;
@@ -11,7 +18,6 @@ public class Student {
     private boolean gender;
 
     //构造函数
-
     public Student(String name, int ID, String birDate, boolean gender) {
         this.name = name;
         this.ID = ID;
